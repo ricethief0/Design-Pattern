@@ -83,7 +83,7 @@ public:
             printf("Create : Unit_Archer\t");
             break;
         default:
-            printf("Don't Create Unit\t");
+            printf("Can't Create Unit\t");
             break;
         }
         return unit;
