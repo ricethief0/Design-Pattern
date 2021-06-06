@@ -1,6 +1,8 @@
 #pragma once
 #include "SimpleFactory.cpp"
 #include "FactoryMethod.cpp"
+#include "Builder.cpp"
+
 
 void SimpleFactoryExample()
 {
@@ -23,10 +25,21 @@ void FactoryMethodExample()
     factory->CreateUnit(1);
     factory->Move();
 }
+
+void BuilerExample()
+{
+    BuilderPattern::Factory* factory = new BuilderPattern::Factory();
+    BuilderPattern::CarBuilder* carBuilder = new BuilderPattern::CarBuilder();
+    BuilderPattern::MoterCycle* moterCycle = new BuilderPattern::MoterCycle();
+
+    factory->MakeVehicle(carBuilder);
+    factory->MakeVehicle(moterCycle);
+}
 int main()
 {
     //SimpleFactoryExample();
-    FactoryMethodExample();
+    //FactoryMethodExample();
+    BuilerExample();
     
 
     return 0;
